@@ -3,27 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Mohd Ayaz - Data Analyst, Business Analyst and Operations Analytics portfolio featuring SQL, Power BI, Tableau, BigQuery and Python projects."
+        content="Mohd Ayaz - Data Analyst and Business Analyst portfolio featuring SQL, BigQuery, Tableau, Power BI, Python and business analytics projects."
     >
 
     <title>Mohd Ayaz | Data Analytics Portfolio</title>
 
     <style>
-
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
-
         :root {
             --navy: #0b1220;
             --navy-light: #111c33;
             --blue: #2563eb;
-            --blue-light: #3b82f6;
+            --blue-dark: #1d4ed8;
             --cyan: #06b6d4;
             --text: #172033;
             --muted: #64748b;
@@ -71,10 +65,9 @@
             margin: auto;
         }
 
-
-        /* =========================================================
+        /* ==============================
            NAVIGATION
-        ========================================================= */
+        ============================== */
 
         nav {
             position: sticky;
@@ -96,8 +89,8 @@
             min-height: 72px;
 
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             gap: 30px;
         }
 
@@ -131,10 +124,9 @@
             color: white;
         }
 
-
-        /* =========================================================
+        /* ==============================
            HERO
-        ========================================================= */
+        ============================== */
 
         .hero {
             position: relative;
@@ -159,7 +151,6 @@
                 );
 
             color: white;
-
             padding: 105px 0 95px;
         }
 
@@ -255,7 +246,7 @@
         }
 
         .btn-primary:hover {
-            background: #1d4ed8;
+            background: var(--blue-dark);
         }
 
         .btn-secondary {
@@ -265,18 +256,15 @@
         }
 
         .btn-secondary:hover {
-            border-color: rgba(255, 255, 255, 0.55);
             background: rgba(255, 255, 255, 0.08);
         }
 
-
-        /* HERO ANALYTICS PANEL */
+        /* ==============================
+           HERO PORTFOLIO SNAPSHOT
+        ============================== */
 
         .analytics-card {
-            position: relative;
-
             border-radius: 18px;
-
             padding: 24px;
 
             background: rgba(255, 255, 255, 0.07);
@@ -373,10 +361,9 @@
             font-weight: 700;
         }
 
-
-        /* =========================================================
-           SECTION GLOBAL
-        ========================================================= */
+        /* ==============================
+           SECTIONS
+        ============================== */
 
         section {
             padding: 85px 0;
@@ -412,10 +399,9 @@
             font-size: 16px;
         }
 
-
-        /* =========================================================
+        /* ==============================
            ABOUT
-        ========================================================= */
+        ============================== */
 
         #about {
             background: white;
@@ -460,13 +446,12 @@
             font-size: 13px;
         }
 
-
-        /* =========================================================
+        /* ==============================
            SKILLS
-        ========================================================= */
+        ============================== */
 
         #skills {
-            background: #f8fafc;
+            background: var(--light);
         }
 
         .skill-columns {
@@ -528,10 +513,9 @@
             font-weight: 650;
         }
 
-
-        /* =========================================================
+        /* ==============================
            PROJECTS
-        ========================================================= */
+        ============================== */
 
         #projects {
             background: white;
@@ -566,11 +550,13 @@
 
         .project-accent {
             height: 5px;
-            background: linear-gradient(
-                90deg,
-                var(--blue),
-                var(--cyan)
-            );
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--cyan)
+                );
         }
 
         .project-inner {
@@ -663,8 +649,9 @@
             margin-bottom: 26px;
         }
 
-
-        /* KPI ROW */
+        /* ==============================
+           KPI CARDS
+        ============================== */
 
         .kpi-grid {
             display: grid;
@@ -675,8 +662,6 @@
         }
 
         .kpi {
-            position: relative;
-
             padding: 21px;
 
             border-radius: 12px;
@@ -725,8 +710,9 @@
             font-weight: 600;
         }
 
-
-        /* PROJECT DETAILS */
+        /* ==============================
+           PROJECT DETAILS
+        ============================== */
 
         .project-details {
             display: grid;
@@ -791,7 +777,7 @@
 
             text-decoration: none;
 
-            padding: 11px 17px;
+            padding: 12px 18px;
 
             border-radius: 8px;
 
@@ -804,7 +790,7 @@
         }
 
         .dashboard-btn:hover {
-            background: #1d4ed8;
+            background: var(--blue-dark);
             transform: translateY(-2px);
         }
 
@@ -813,10 +799,9 @@
             font-size: 12px;
         }
 
-
-        /* =========================================================
+        /* ==============================
            CONTACT
-        ========================================================= */
+        ============================== */
 
         #contact {
             background:
@@ -864,10 +849,9 @@
             gap: 10px;
         }
 
-
-        /* =========================================================
+        /* ==============================
            FOOTER
-        ========================================================= */
+        ============================== */
 
         footer {
             background: #060b14;
@@ -881,10 +865,9 @@
             font-size: 13px;
         }
 
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
+        /* ==============================
+           MOBILE
+        ============================== */
 
         @media (max-width: 900px) {
 
@@ -913,9 +896,7 @@
             .contact-buttons {
                 flex-direction: row;
             }
-
         }
-
 
         @media (max-width: 680px) {
 
@@ -974,22 +955,6 @@
             .contact-buttons .btn {
                 width: 100%;
             }
-
-        }
-
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                transition: none !important;
-            }
-
         }
 
     </style>
@@ -999,9 +964,9 @@
 <body>
 
 
-<!-- =========================================================
+<!-- ==============================
      NAVIGATION
-========================================================= -->
+============================== -->
 
 <nav>
 
@@ -1028,17 +993,14 @@
 </nav>
 
 
-
-<!-- =========================================================
+<!-- ==============================
      HERO
-========================================================= -->
+============================== -->
 
 <header class="hero">
 
     <div class="container hero-grid">
 
-
-        <!-- HERO LEFT -->
 
         <div>
 
@@ -1046,7 +1008,7 @@
 
                 <span class="eyebrow-dot"></span>
 
-                Analytics Portfolio
+                Data Analytics Portfolio
 
             </div>
 
@@ -1057,16 +1019,19 @@
 
 
             <h2>
+
                 Data Analyst · Business Analyst ·
                 Operations & Supply Chain Analytics
+
             </h2>
 
 
             <p class="hero-description">
 
-                I transform operational and business data into clear insights,
-                interactive dashboards and actionable recommendations using
-                SQL, Power BI, Tableau, BigQuery, Excel and Python.
+                I transform operational and business data into clear
+                insights, interactive dashboards and actionable
+                recommendations using SQL, Power BI, Tableau,
+                BigQuery, Excel and Python.
 
             </p>
 
@@ -1096,17 +1061,18 @@
         </div>
 
 
-
-        <!-- HERO RIGHT / ANALYTICS DASHBOARD -->
+        <!-- PORTFOLIO SNAPSHOT -->
 
         <div class="analytics-card">
 
             <div class="analytics-header">
 
-                <strong>Portfolio Snapshot</strong>
+                <strong>
+                    Portfolio Snapshot
+                </strong>
 
                 <span class="live-badge">
-                    ● PROJECTS
+                    ● 3 PROJECTS
                 </span>
 
             </div>
@@ -1114,9 +1080,12 @@
 
             <div class="analytics-kpis">
 
+
                 <div class="analytics-kpi">
 
-                    <strong>3</strong>
+                    <strong>
+                        3
+                    </strong>
 
                     <span>
                         Featured Analytics Projects
@@ -1127,7 +1096,9 @@
 
                 <div class="analytics-kpi">
 
-                    <strong>791K+</strong>
+                    <strong>
+                        791K+
+                    </strong>
 
                     <span>
                         Bike-Share Rides Analyzed
@@ -1138,7 +1109,9 @@
 
                 <div class="analytics-kpi">
 
-                    <strong>35</strong>
+                    <strong>
+                        35
+                    </strong>
 
                     <span>
                         Bellabeat Activity Users
@@ -1149,10 +1122,12 @@
 
                 <div class="analytics-kpi">
 
-                    <strong>50.88%</strong>
+                    <strong>
+                        50.88%
+                    </strong>
 
                     <span>
-                        Sales Dashboard Profit Margin
+                        Sales Profit Margin
                     </span>
 
                 </div>
@@ -1192,10 +1167,9 @@
 </header>
 
 
-
-<!-- =========================================================
+<!-- ==============================
      ABOUT
-========================================================= -->
+============================== -->
 
 <section id="about">
 
@@ -1212,14 +1186,16 @@
 
 
                 <h2 class="section-title">
+
                     Analytics grounded in real business problems.
+
                 </h2>
 
 
                 <p>
 
                     I am a Business Analytics professional with experience
-                    working across operations, supply chain, reporting,
+                    across operations, supply chain analytics, reporting,
                     root cause analysis, stakeholder coordination and
                     process improvement.
 
@@ -1232,15 +1208,15 @@
                     business question, validating the data, cleaning and
                     transforming it, performing analysis, building
                     visualizations and translating the results into
-                    practical recommendations.
+                    actionable recommendations.
 
                 </p>
 
 
                 <p>
 
-                    My portfolio demonstrates hands-on work across
-                    transportation, customer behaviour, wellness analytics,
+                    My portfolio demonstrates hands-on analytical work
+                    across transportation, customer behaviour, wellness,
                     sales performance and profitability.
 
                 </p>
@@ -1248,8 +1224,8 @@
             </div>
 
 
-
             <div class="strength-grid">
+
 
                 <div class="strength-card">
 
@@ -1258,8 +1234,10 @@
                     </strong>
 
                     <p>
+
                         Clean, validate and analyze data to identify
-                        meaningful trends and patterns.
+                        meaningful trends, patterns and business signals.
+
                     </p>
 
                 </div>
@@ -1272,8 +1250,10 @@
                     </strong>
 
                     <p>
+
                         Turn analysis into clear Power BI and Tableau
-                        dashboards for decision-making.
+                        dashboards that make information easier to use.
+
                     </p>
 
                 </div>
@@ -1286,8 +1266,10 @@
                     </strong>
 
                     <p>
-                        Translate findings into business recommendations,
-                        KPIs and process-improvement opportunities.
+
+                        Translate analytical findings into business
+                        recommendations, KPIs and process improvements.
+
                     </p>
 
                 </div>
@@ -1301,10 +1283,9 @@
 </section>
 
 
-
-<!-- =========================================================
+<!-- ==============================
      SKILLS
-========================================================= -->
+============================== -->
 
 <section id="skills">
 
@@ -1324,13 +1305,12 @@
 
             <p class="section-description">
 
-                Tools and analytical techniques used across my portfolio
-                projects and business analytics work.
+                Tools and analytical techniques used across my
+                portfolio and business analytics work.
 
             </p>
 
         </div>
-
 
 
         <div class="skill-columns">
@@ -1341,7 +1321,6 @@
                 <div class="skill-icon">
                     SQL
                 </div>
-
 
                 <h3>
                     Data & Analysis
@@ -1367,13 +1346,11 @@
             </div>
 
 
-
             <div class="skill-card">
 
                 <div class="skill-icon">
                     BI
                 </div>
-
 
                 <h3>
                     Business Intelligence
@@ -1399,13 +1376,11 @@
             </div>
 
 
-
             <div class="skill-card">
 
                 <div class="skill-icon">
                     BA
                 </div>
-
 
                 <h3>
                     Business Analytics
@@ -1437,10 +1412,9 @@
 </section>
 
 
-
-<!-- =========================================================
+<!-- ==============================
      PROJECTS
-========================================================= -->
+============================== -->
 
 <section id="projects">
 
@@ -1461,22 +1435,21 @@
             <p class="section-description">
 
                 End-to-end projects covering data preparation,
-                SQL analysis, business intelligence, visualization
-                and data-driven recommendations.
+                SQL analysis, visualization, business intelligence
+                and actionable recommendations.
 
             </p>
 
         </div>
 
 
-
         <div class="projects-list">
 
 
-
-            <!-- =================================================
-                 PROJECT 1 — CYCLISTIC
-            ================================================== -->
+            <!-- ==========================
+                 PROJECT 1
+                 CYCLISTIC
+            ========================== -->
 
             <article class="project">
 
@@ -1494,7 +1467,6 @@
                                 Project 01
                             </div>
 
-
                             <h3>
                                 Cyclistic Bike-Share Analysis
                             </h3>
@@ -1503,11 +1475,10 @@
 
 
                         <span class="project-status">
-                            CASE STUDY
+                            TABLEAU
                         </span>
 
                     </div>
-
 
 
                     <div class="project-tools">
@@ -1525,7 +1496,6 @@
                     </div>
 
 
-
                     <div class="business-question">
 
                         <strong>
@@ -1539,21 +1509,20 @@
                     </div>
 
 
-
                     <p class="project-description">
 
                         I analyzed Q1 2019 and Q1 2020 Cyclistic
-                        bike-share data. SQL supported exploration and
-                        aggregation, Python was used for cleaning,
+                        bike-share data. SQL supported data exploration
+                        and aggregation, Python was used for cleaning,
                         standardization and validation, and Tableau
-                        communicated the results through an
-                        executive-focused dashboard.
+                        communicated the findings through an
+                        executive-focused interactive dashboard.
 
                     </p>
 
 
-
                     <div class="kpi-grid">
+
 
                         <div class="kpi">
 
@@ -1596,7 +1565,6 @@
                     </div>
 
 
-
                     <div class="project-details">
 
 
@@ -1605,7 +1573,6 @@
                             <h4>
                                 Key Findings
                             </h4>
-
 
                             <ul>
 
@@ -1630,13 +1597,11 @@
                         </div>
 
 
-
                         <div class="project-detail">
 
                             <h4>
                                 Business Recommendations
                             </h4>
-
 
                             <ul>
 
@@ -1651,7 +1616,7 @@
                                 </li>
 
                                 <li>
-                                    Focus marketing during periods of
+                                    Focus campaigns during periods of
                                     increasing casual demand.
                                 </li>
 
@@ -1660,7 +1625,6 @@
                         </div>
 
                     </div>
-
 
 
                     <div class="project-actions">
@@ -1672,7 +1636,7 @@
                             rel="noopener noreferrer"
                         >
 
-                            View Tableau Dashboard ↗
+                            View Interactive Tableau Dashboard ↗
 
                         </a>
 
@@ -1683,11 +1647,10 @@
             </article>
 
 
-
-
-            <!-- =================================================
-                 PROJECT 2 — BELLABEAT
-            ================================================== -->
+            <!-- ==========================
+                 PROJECT 2
+                 BELLABEAT
+            ========================== -->
 
             <article class="project">
 
@@ -1705,7 +1668,6 @@
                                 Project 02
                             </div>
 
-
                             <h3>
                                 Bellabeat Smart Device Usage Analysis
                             </h3>
@@ -1714,11 +1676,10 @@
 
 
                         <span class="project-status">
-                            CASE STUDY
+                            TABLEAU
                         </span>
 
                     </div>
-
 
 
                     <div class="project-tools">
@@ -1736,7 +1697,6 @@
                     </div>
 
 
-
                     <div class="business-question">
 
                         <strong>
@@ -1750,20 +1710,19 @@
                     </div>
 
 
-
                     <p class="project-description">
 
                         I analyzed Fitbit smart-device activity and sleep
                         datasets using Excel, Google BigQuery, SQL,
                         Python and Tableau. The workflow included data
-                        validation, descriptive analysis, SQL joins,
-                        transformation and visualization.
+                        validation, cleaning, descriptive analysis,
+                        SQL transformations, joins and visualization.
 
                     </p>
 
 
-
                     <div class="kpi-grid">
+
 
                         <div class="kpi">
 
@@ -1806,7 +1765,6 @@
                     </div>
 
 
-
                     <div class="project-details">
 
 
@@ -1815,7 +1773,6 @@
                             <h4>
                                 Key Findings
                             </h4>
-
 
                             <ul>
 
@@ -1839,13 +1796,11 @@
                         </div>
 
 
-
                         <div class="project-detail">
 
                             <h4>
                                 Business Recommendations
                             </h4>
-
 
                             <ul>
 
@@ -1856,12 +1811,13 @@
 
                                 <li>
                                     Use individualized wellness insights
-                                    to improve engagement.
+                                    to improve user engagement.
                                 </li>
 
                                 <li>
-                                    Encourage combined activity and sleep
-                                    tracking for a broader wellness view.
+                                    Encourage combined activity and
+                                    sleep tracking for a broader wellness
+                                    experience.
                                 </li>
 
                             </ul>
@@ -1871,14 +1827,18 @@
                     </div>
 
 
-
                     <div class="project-actions">
 
-                        <span class="project-note">
+                        <a
+                            class="dashboard-btn"
+                            href="https://public.tableau.com/app/profile/mohd.ayaz.mahmood/viz/Bellabeat_17869023015560/Dashboard1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
 
-                            BigQuery analysis · Tableau dashboard completed
+                            View Interactive Tableau Dashboard ↗
 
-                        </span>
+                        </a>
 
                     </div>
 
@@ -1887,11 +1847,10 @@
             </article>
 
 
-
-
-            <!-- =================================================
-                 PROJECT 3 — SALES PERFORMANCE
-            ================================================== -->
+            <!-- ==========================
+                 PROJECT 3
+                 SALES PERFORMANCE
+            ========================== -->
 
             <article class="project">
 
@@ -1909,7 +1868,6 @@
                                 Project 03
                             </div>
 
-
                             <h3>
                                 Sales Performance & Profitability Dashboard
                             </h3>
@@ -1922,7 +1880,6 @@
                         </span>
 
                     </div>
-
 
 
                     <div class="project-tools">
@@ -1940,7 +1897,6 @@
                     </div>
 
 
-
                     <div class="business-question">
 
                         <strong>
@@ -1952,7 +1908,6 @@
                         and time periods?
 
                     </div>
-
 
 
                     <p class="project-description">
@@ -1968,8 +1923,8 @@
                     </p>
 
 
-
                     <div class="kpi-grid">
+
 
                         <div class="kpi">
 
@@ -2012,7 +1967,6 @@
                     </div>
 
 
-
                     <div class="project-details">
 
 
@@ -2022,7 +1976,6 @@
                                 Dashboard Features
                             </h4>
 
-
                             <ul>
 
                                 <li>
@@ -2031,7 +1984,8 @@
                                 </li>
 
                                 <li>
-                                    Monthly Sales Trend analysis.
+                                    Monthly Sales Trend for
+                                    time-based performance analysis.
                                 </li>
 
                                 <li>
@@ -2042,10 +1996,13 @@
                                     Region and category performance matrix.
                                 </li>
 
+                                <li>
+                                    Interactive Date, Region and Product filters.
+                                </li>
+
                             </ul>
 
                         </div>
-
 
 
                         <div class="project-detail">
@@ -2054,26 +2011,26 @@
                                 Technical Highlights
                             </h4>
 
-
                             <ul>
 
                                 <li>
-                                    Data cleaning and transformation using
+                                    Cleaned and transformed data using
                                     Power Query.
                                 </li>
 
                                 <li>
-                                    Sales-to-Product relationship using
-                                    Product ID.
+                                    Created Sales-to-Product relationships
+                                    using Product ID.
                                 </li>
 
                                 <li>
-                                    Date table created for time intelligence.
+                                    Created a Date table for
+                                    time-intelligence analysis.
                                 </li>
 
                                 <li>
-                                    Dynamic DAX measures responding to Date,
-                                    Region and Product slicers.
+                                    Developed dynamic DAX measures that
+                                    respond to dashboard filters.
                                 </li>
 
                             </ul>
@@ -2083,13 +2040,22 @@
                     </div>
 
 
-
                     <div class="project-actions">
+
+                        <a
+                            class="dashboard-btn"
+                            href="Sales-Insights-Performance-Dashboard.pbix"
+                            download
+                        >
+
+                            Download Power BI Project (.pbix) ↓
+
+                        </a>
+
 
                         <span class="project-note">
 
-                            Interactive Power BI dashboard · DAX ·
-                            Power Query · Data Modeling
+                            Open using Microsoft Power BI Desktop
 
                         </span>
 
@@ -2099,7 +2065,6 @@
 
             </article>
 
-
         </div>
 
     </div>
@@ -2107,10 +2072,9 @@
 </section>
 
 
-
-<!-- =========================================================
+<!-- ==============================
      CONTACT
-========================================================= -->
+============================== -->
 
 <section id="contact">
 
@@ -2125,7 +2089,7 @@
 
 
             <h2>
-                Interested in data-driven problem solving.
+                Data-driven problem solving.
             </h2>
 
 
@@ -2141,8 +2105,8 @@
         </div>
 
 
-
         <div class="contact-buttons">
+
 
             <a
                 class="btn btn-primary"
@@ -2151,17 +2115,17 @@
                 rel="noopener noreferrer"
             >
 
-                GitHub ↗
+                View GitHub ↗
 
             </a>
 
 
             <a
                 class="btn btn-secondary"
-                href="https://ayaz-24.github.io/github.io/"
+                href="#projects"
             >
 
-                Portfolio Home
+                View Projects
 
             </a>
 
@@ -2172,10 +2136,9 @@
 </section>
 
 
-
-<!-- =========================================================
+<!-- ==============================
      FOOTER
-========================================================= -->
+============================== -->
 
 <footer>
 
