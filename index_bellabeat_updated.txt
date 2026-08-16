@@ -1,0 +1,66 @@
+Mohd Ayaz
+About Skills Projects Contact
+Mohd Ayaz
+Data Analyst | Business Analyst | Operations & Supply Chain Analytics
+Data-driven professional focused on transforming operational and business data into clear insights, actionable recommendations, and better decisions.
+View Projects LinkedIn
+About Me
+I am a Business Analytics professional with experience in operations, supply chain analytics, reporting, and process improvement. I enjoy working with data to identify patterns, explain business problems, and develop practical recommendations.
+
+My analytics toolkit includes SQL, Python, Tableau, Power BI, and Excel. I use a structured approach to move from business questions to data preparation, analysis, visualization, and recommendations.
+Skills
+SQL
+Python
+Tableau
+Power BI
+Excel
+Data Visualization
+Business Analytics
+Supply Chain Analytics
+Data Cleaning
+Descriptive Analysis
+Featured Projects
+Cyclistic Bike-Share Analysis
+SQL · Python · Tableau · Data Visualization · Business Analytics
+Business Question: How do annual members and casual riders use Cyclistic bikes differently?
+
+I analyzed Q1 2019 and Q1 2020 Cyclistic bike-share data. SQL was used for data exploration and summary analysis, while Python was used to clean, standardize, merge, and analyze the datasets. Tableau was then used to communicate the findings through an executive-focused dashboard.
+791K
+Valid rides analyzed
++108.4%
+Casual ride growth
+36.42 min
+Average casual ride
+Key Findings
+	•	Casual riders averaged 36.42 minutes per ride compared with 11.41 minutes for members.
+	•	Casual rides increased from 23,095 in Q1 2019 to 48,136 in Q1 2020.
+	•	Casual riding increased throughout Q1 2020 while member riding declined month over month.
+Top Recommendations
+	1	Target frequent casual riders with membership campaigns.
+	2	Position membership around the value and convenience of longer rides.
+	3	Focus campaigns during periods when casual usage is increasing.
+View Interactive Tableau Dashboard →
+Bellabeat Smart Device Usage Analysis
+Excel · BigQuery SQL · Python · Tableau · Data Visualization · Business Analytics
+Business Question: What trends in smart-device usage can help Bellabeat improve its marketing strategy?
+
+I analyzed Fitbit smart-device activity and sleep data using Excel, Google BigQuery, Python, and Tableau. The project covered data cleaning, validation, descriptive analysis, SQL transformations and joins, Python-based verification, and an interactive Tableau dashboard.
+457
+Daily activity records
+6,547
+Average daily steps
+35
+Activity users analyzed
+Key Findings
+	•	Users averaged approximately 6,547 steps per day, with a median of 5,986 steps.
+	•	Average recorded daily distance was approximately 4.66, while average daily calories were approximately 2,189.
+	•	Sleep data was available for 23 of the 35 activity users, and daily user coverage varied across the analysis period.
+Top Recommendations
+	1	Promote personalized daily activity tracking and goal setting.
+	2	Use individualized wellness insights to encourage continued engagement.
+	3	Encourage customers to combine activity tracking with sleep and other wellness features for a broader view of their habits.
+Let's Connect
+I am interested in opportunities involving data analytics, business analysis, operations analytics, and supply chain analytics.
+
+LinkedIn: Connect with me
+© 2026 Mohd Ayaz · Data Analytics Portfolio
