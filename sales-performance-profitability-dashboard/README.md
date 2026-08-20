@@ -2,131 +2,95 @@
 
 ## Project Overview
 
-This Power BI project provides an interactive view of sales performance and profitability across products, categories, regions and time. It brings sales and product data into a reusable analytical model and turns the core business metrics into a compact management dashboard.
+This Power BI project provides an interactive view of sales performance and profitability across products, categories, regions, salespeople and time. The final dashboard combines clean KPI reporting with focused trend and performance visuals for a compact management view.
+
+![Sales Performance & Profitability Dashboard](Sales%20Performance%20and%20Profitability%20Dashboard.png)
 
 ## Business Objective
 
 The dashboard was designed to:
 
-- Monitor total sales, total profit and profit margin.
-- Compare sales performance across product categories and regions.
+- Monitor total sales, total profit, profit margin and total orders.
 - Identify changes in monthly sales performance.
+- Compare sales across regions and salespeople.
+- Compare sales and profit across product categories.
 - Enable users to filter results by date, region and product.
-- Provide a reliable model that responds consistently to filter context.
-
-## Dataset and Model
-
-The model combines two core tables:
-
-- **Sales** — transactional values including date, product, region, sales and profit
-- **Product** — descriptive product and category attributes
-
-A dedicated **Date** table supports chronological filtering and time-based analysis. The model follows a simple star-schema approach:
-
-```text
-Date (1) ──────── (*) Sales (*) ──────── (1) Product
-```
 
 ## Tools Used
 
-- **Power BI Desktop** — data model, report development and interaction design
-- **Power Query** — type correction, field cleanup and table preparation
-- **DAX** — reusable KPI and profitability measures
-- **Data modeling** — table relationships, filter direction and Date-table design
+- **Power BI Desktop** — report development and interaction design
+- **Power Query** — data preparation and cleanup
+- **DAX** — KPI and profitability measures
+- **Data Modeling** — relationships and filter context
 
-## Data Preparation
-
-The Power Query workflow included:
-
-1. Loading the Sales and Product tables.
-2. Promoting headers and assigning correct data types.
-3. Trimming and cleaning text fields.
-4. Checking key fields for blanks and duplicate Product IDs.
-5. Confirming that Sales product keys match the Product table.
-6. Loading clean tables into the semantic model.
-
-Detailed transformation guidance is available in [`power-query-steps.md`](power-query-steps.md).
-
-## Data Model
-
-- `Product[Product ID]` has a one-to-many relationship with `Sales[Product ID]`.
-- `Date[Date]` has a one-to-many relationship with `Sales[Date]`.
-- Filters flow from the Date and Product dimensions into Sales.
-- KPI logic is implemented as measures so results respond to slicers and visual context.
-
-## Key Measures
-
-The reusable DAX definitions are documented in [`measures.dax`](measures.dax).
+## Key KPIs
 
 | KPI | Result |
 |---|---:|
 | Total Sales | 855 |
 | Total Profit | 435 |
 | Profit Margin | 50.88% |
+| Total Orders | 5 |
 
 ## Dashboard Features
 
-- KPI cards for Total Sales, Total Profit and Profit Margin
-- Monthly Sales Trend for time-based monitoring
-- Sales comparison by product category
-- Region and category performance matrix
+- KPI cards for Total Sales, Total Profit, Profit Margin and Total Orders
+- Monthly Sales Trend
+- Sales by Region
+- Sales by Salesperson
+- Sales & Profit by Product Category
 - Date, Region and Product slicers
 - Dynamic calculations that respond to filter selections
 
-## Analytical Use Cases
+## Key Findings
 
-### Performance Monitoring
-
-The KPI cards provide an immediate summary of current results under the selected filter context.
-
-### Trend Analysis
-
-The monthly trend helps users distinguish sustained performance changes from one-off movements and supports period-based review.
-
-### Product and Regional Comparison
-
-Category and region views help managers identify where sales and profitability are concentrated and where further investigation may be required.
+- North recorded the highest regional sales at 500.
+- Eli was the top salesperson with total sales of 300.
+- Gadgets generated 735 in sales and 371 in profit, making them the strongest product category.
+- Accessories generated 120 in sales and 64 in profit.
+- Monthly sales declined from 370 in January to 185 in February, then recovered to 300 in March.
 
 ## Business Recommendations
 
-1. **Review sales and profit together** so high-revenue categories are not assumed to be the most valuable without checking margin.
-2. **Investigate underperforming region-category combinations** for pricing, product-mix, availability or execution issues.
-3. **Use monthly trends for planning** and compare material movements with commercial events, promotions and operational changes.
-4. **Define KPI ownership and refresh frequency** so dashboard insights are tied to a regular decision-making process.
-5. **Expand the model carefully** with targets, units, customers and costs when reliable source data becomes available.
+1. Investigate the drivers behind stronger sales performance in the North region and identify practices that may be transferable to other regions.
+2. Review the approach used by top-performing salespeople such as Eli and use relevant practices to support the wider sales team.
+3. Continue monitoring Gadgets as the primary sales and profit contributor while identifying opportunities to improve Accessories performance.
+4. Investigate the February sales decline and compare it with promotions, seasonality, inventory availability or operational factors.
+5. Use the dashboard filters during regular business reviews to examine performance by date, region and product.
 
-## Limitations and Next Steps
+## Data Preparation and Modeling
 
-- The current portfolio version contains a compact demonstration dataset.
-- Results should be interpreted within the available date, product and regional coverage.
-- Future versions could include target-versus-actual performance, year-over-year growth, customer segmentation and drill-through detail.
-- Refresh documentation and automated data-quality checks would be required for production use.
+The project uses Sales and Product data prepared in Power Query. Data types, key fields and text values were validated before loading the model. A Date table supports chronological analysis and reusable DAX measures ensure KPI values respond correctly to report filters.
 
-## Skills Demonstrated
-
-**Power Query:** data loading, type management, text cleanup and quality checks
-
-**DAX:** aggregation, safe division, filter-context awareness and time-based measures
-
-**Power BI:** KPI cards, trends, matrix views, slicers and interaction design
-
-**Data modeling:** dimension design, relationships and reusable semantic measures
+Detailed preparation guidance is available in [`power-query-steps.md`](power-query-steps.md), and the reusable DAX definitions are documented in [`measures.dax`](measures.dax).
 
 ## Repository Structure
 
 ```text
 sales-performance-profitability-dashboard/
 ├── README.md
+├── Sales Performance and Profitability Dashboard.pbix
+├── Sales Performance and Profitability Dashboard.png
 ├── measures.dax
 └── power-query-steps.md
-
-Sales-Insights-and-Performance-Dashboard.pbix
 ```
 
-## Power BI File
+## Project Files
 
-[Download the Power BI project](../Sales-Insights-and-Performance-Dashboard.pbix) and open it using Microsoft Power BI Desktop.
+[View the dashboard screenshot](Sales%20Performance%20and%20Profitability%20Dashboard.png)
+
+[Download the Power BI project](Sales%20Performance%20and%20Profitability%20Dashboard.pbix)
+
+## Skills Demonstrated
+
+**Power Query:** data loading, type management, cleanup and validation
+
+**DAX:** aggregation, distinct order counting, safe division and filter-context awareness
+
+**Power BI:** KPI cards, line charts, bar charts, category comparisons, slicers and dashboard layout
+
+**Business Analytics:** trend analysis, regional performance, salesperson performance and profitability analysis
 
 ## Conclusion
 
-The dashboard creates a clear, filterable view of sales and profitability from a compact data model. Its strongest value is the combination of reusable DAX measures, structured relationships and focused visuals that allow business users to move from headline performance to product, regional and monthly detail.
+The final dashboard provides a clear and interactive view of sales and profitability from a compact dataset. It allows users to move quickly from headline KPIs to monthly trends, regional performance, salesperson performance and category-level profitability.
