@@ -2,120 +2,224 @@
 
 ## Project Overview
 
-Cyclistic is a fictional Chicago bike-share company. This case study compares how annual members and casual riders used the service in Q1 2019 and Q1 2020, then translates those differences into practical membership-growth recommendations.
+Cyclistic is a fictional Chicago bike-share company. This case study analyzes how **casual riders and annual members** used the bike-share service across Q1 2019 and Q1 2020.
 
-The final analysis covers **more than 791,000 valid rides** and is presented through an executive-focused Tableau dashboard.
+The project analyzes **791,357 valid rides** to identify differences in ride volume, ride duration, and rider behaviour. The findings are presented through an executive-focused Tableau dashboard and translated into recommendations for increasing annual membership.
+
+---
 
 ## Business Objective
 
-The analysis was designed to:
+The analysis was designed to answer the following business questions:
 
-- Compare ride volume and ride duration for annual members and casual riders.
-- Identify monthly and weekday usage patterns.
-- Measure how rider behaviour changed between Q1 2019 and Q1 2020.
-- Identify opportunities to convert suitable casual riders into annual members.
-- Communicate the results through an interactive Tableau dashboard.
+- How does ride volume differ between casual riders and members?
+- How much did casual ridership change from Q1 2019 to Q1 2020?
+- How does average ride duration differ between rider types?
+- How did casual and member ride volumes change during Q1 2020?
+- What opportunities exist to convert suitable casual riders into annual members?
+
+---
 
 ## Dataset
 
-The project uses Cyclistic/Divvy trip data for:
+The project uses Cyclistic/Divvy bike-share trip data from:
 
-- Q1 2019
-- Q1 2020
+- **Q1 2019**
+- **Q1 2020**
 
-The source files use different column names, so the two periods were standardized before they were combined. The analysis uses fields such as ride ID, start and end timestamps, station details, rider type and calculated ride duration.
+Because the two datasets used different schemas and rider-type labels, the data was standardized before analysis.
 
-Raw source data is not stored in this repository. See [`data/README.md`](data/README.md) for expected files and preparation notes.
+For consistency:
+
+- `Customer` was standardized to `casual`
+- `Subscriber` was standardized to `member`
+
+Raw source data is not stored in this repository.
+
+See [data/README.md](data/README.md) for dataset and preparation information.
+
+---
 
 ## Tools Used
 
-- **Python (pandas)** — schema standardization, cleaning, feature engineering and validation
-- **SQL** — aggregation, rider-type comparison, monthly trends and weekday analysis
-- **Tableau** — interactive dashboard development and executive storytelling
-- **Business analytics** — KPI design, trend interpretation and recommendation development
+- **SQL / BigQuery** — data cleaning, validation, aggregation and rider analysis
+- **Python (pandas)** — additional data preparation and validation
+- **Tableau** — KPI development, data visualization and dashboard storytelling
+- **GitHub** — project documentation and portfolio presentation
+
+---
 
 ## Data Preparation
 
-The preparation workflow included:
+The preparation process included:
 
-1. Standardizing the different Q1 2019 and Q1 2020 schemas.
-2. Converting timestamps to a consistent datetime format.
-3. Normalizing rider labels to `casual` and `member`.
-4. Removing duplicate ride records.
-5. Removing records with missing or invalid timestamps.
-6. Calculating ride duration in minutes.
-7. Excluding rides with non-positive durations.
-8. Creating year, month and weekday fields for trend analysis.
+1. Reviewing the Q1 2019 and Q1 2020 datasets.
+2. Standardizing column names and data types.
+3. Standardizing rider categories to `casual` and `member`.
+4. Validating ride start and end timestamps.
+5. Removing invalid rides where the end time occurred before the start time.
+6. Excluding rides longer than 24 hours.
+7. Calculating ride duration.
+8. Creating year and month fields for trend analysis.
+9. Combining the cleaned Q1 2019 and Q1 2020 datasets.
+10. Validating the final dataset before visualization.
 
-The reproducible preparation workflow is documented in [`cyclistic_data_cleaning.py`](cyclistic_data_cleaning.py).
+The final cleaned dataset contained:
+
+**791,357 valid rides**
+
+The reproducible preparation workflow is available in:
+
+[cyclistic_data_cleaning.py](cyclistic_data_cleaning.py)
+
+SQL analysis is available in:
+
+[cyclistic_analysis.sql](cyclistic_analysis.sql)
+
+---
 
 ## Key KPIs
 
 | KPI | Result |
-|---|---:|
-| Valid rides analyzed | 791K+ |
-| Casual rides, Q1 2019 | 23,095 |
-| Casual rides, Q1 2020 | 48,136 |
-| Casual ride growth | 108.4% |
-| Average casual ride duration | 36.42 minutes |
-| Average member ride duration | 11.41 minutes |
+| --- | ---: |
+| Valid Rides Analyzed | **791,357** |
+| Casual Rides — Q1 2019 | **23,095** |
+| Casual Rides — Q1 2020 | **48,136** |
+| Casual Ride Growth YoY | **108.4%** |
+| Average Casual Ride Duration | **36.42 min** |
+| Average Member Ride Duration | **11.41 min** |
+
+---
 
 ## Key Findings
 
-### Ride Duration
+### 1. Casual Ridership More Than Doubled
 
-Casual riders averaged **36.42 minutes per ride**, more than three times the **11.41-minute** member average. This suggests that casual riders were more likely to use the service for longer, leisure-oriented trips, while members tended to make shorter, repeat journeys.
+Casual rides increased from **23,095 in Q1 2019 to 48,136 in Q1 2020**, representing approximately **108.4% year-over-year growth**.
 
-### Casual-Rider Growth
+This indicates substantial growth in casual rider engagement between the two periods.
 
-Casual rides increased from **23,095 in Q1 2019 to 48,136 in Q1 2020**, representing growth of approximately **108.4%**.
+### 2. Casual Riders Take Significantly Longer Trips
 
-### Rider Trends
+Casual riders averaged **36.42 minutes per ride**, compared with **11.41 minutes for members**.
 
-Casual usage increased across the comparison period, while member usage showed a declining monthly pattern. The different trends indicate that a single marketing message is unlikely to work equally well for both rider groups.
+Casual trips were therefore more than **3× longer** on average than member trips, highlighting a clear behavioural difference between the two rider groups.
+
+### 3. Q1 2020 Monthly Trends Differed by Rider Type
+
+During Q1 2020, casual monthly rides increased significantly:
+
+- January: **7,721**
+- February: **12,806**
+- March: **27,609**
+
+During the same period, member monthly rides declined:
+
+- January: **136,082**
+- February: **126,696**
+- March: **115,566**
+
+This distinction is important: **member rides increased overall from Q1 2019 to Q1 2020, but showed a declining month-to-month trend within Q1 2020.**
+
+---
 
 ## Business Recommendations
 
-1. **Target frequent casual riders** with conversion campaigns based on repeat usage rather than targeting every casual rider.
-2. **Position membership around convenience and value**, especially for riders whose repeated pay-per-ride costs may exceed membership cost.
-3. **Time campaigns around periods of rising casual demand** so offers reach riders when engagement is already increasing.
-4. **Use rider-specific messaging**: emphasize savings and convenience for frequent riders while retaining flexible ride options for occasional leisure users.
-5. **Track conversion KPIs** such as offer response, membership conversion, repeat usage and retention after conversion.
+1. **Target frequent casual riders for membership conversion**  
+   Focus marketing efforts on casual riders who demonstrate repeat usage rather than targeting all casual users.
+
+2. **Position membership around convenience and value**  
+   Show frequent casual riders how annual membership could provide better value and convenience compared with repeated individual ride purchases.
+
+3. **Time campaigns around increasing casual demand**  
+   Casual usage increased substantially during Q1 2020, suggesting that conversion campaigns could be more effective during periods of growing casual activity.
+
+4. **Use rider-specific marketing messages**  
+   Casual and member riders demonstrate different usage behaviours, so marketing communication should be tailored rather than using a single message for both groups.
+
+5. **Track conversion performance**  
+   Monitor KPIs such as campaign response rate, membership conversion rate, repeat usage and retention to determine whether conversion initiatives are successful.
+
+---
 
 ## Tableau Dashboard
 
-The dashboard communicates:
+The redesigned Tableau dashboard provides an executive view of:
 
-- Total rides by rider type
+- **791K** valid rides analyzed
+- **108.4%** casual ride growth YoY
 - Average ride duration by rider type
-- Q1 2019 versus Q1 2020 trends
-- Monthly ride volume
-- Weekday usage patterns
-- Differences between casual and member behaviour
+- Q1 2019 vs Q1 2020 ride volume
+- Q1 2020 monthly ride trends
+- Key analytical insights and business implications
 
-[View the interactive Tableau dashboard](https://public.tableau.com/app/profile/mohd.ayaz.mahmood/viz/CyclisticBike-ShareAnalysisQ12019Q12020/CyclisticRiderBehaviourAnalysisQ12019vsQ12020)
+### Dashboard Preview
+
+![Cyclistic Bike-Share Analysis Dashboard](Cyclistic%20Bike-Share%20Analysis%20Dashboard.png)
+
+### Interactive Dashboard
+
+[View the Interactive Tableau Dashboard](https://public.tableau.com/app/profile/mohd.ayaz.mahmood/viz/CyclisticBike-ShareAnalysisQ12019Q12020/CyclisticRiderBehaviourAnalysisQ12019vsQ12020)
+
+---
 
 ## Skills Demonstrated
 
-**Python:** pandas, schema mapping, datetime handling, duplicate removal, validation and feature engineering
+**SQL / BigQuery**
+- Data cleaning
+- Conditional aggregation
+- Date functions
+- `GROUP BY`
+- Rider segmentation
+- Trend analysis
+- Data validation
 
-**SQL:** conditional aggregation, date functions, grouping, percentage change and rider segmentation
+**Python**
+- pandas
+- Schema standardization
+- Datetime handling
+- Data cleaning
+- Feature engineering
+- Validation
 
-**Tableau:** calculated fields, KPI design, filters, comparisons and dashboard storytelling
+**Tableau**
+- Calculated fields
+- KPI cards
+- Filters
+- Comparative analysis
+- Trend visualization
+- Dashboard design
+- Executive storytelling
 
-**Analytics:** data cleaning, behavioural segmentation, trend analysis and recommendation development
+**Business Analytics**
+- KPI development
+- Behavioural segmentation
+- Trend interpretation
+- Insight generation
+- Business recommendations
+
+---
 
 ## Repository Structure
 
 ```text
 cyclistic-bike-share-analysis/
 ├── README.md
+├── Cyclistic Bike-Share Analysis Dashboard.png
 ├── cyclistic_analysis.sql
 ├── cyclistic_data_cleaning.py
 └── data/
     └── README.md
 ```
 
+---
+
 ## Conclusion
 
-Casual riders took substantially longer rides and casual usage more than doubled between the two Q1 periods. The strongest opportunity is to identify frequent casual riders, communicate the financial and convenience benefits of membership, and measure whether targeted campaigns produce sustainable member growth.
+The analysis identified meaningful behavioural differences between Cyclistic's casual riders and annual members.
+
+Casual ridership grew **108.4% year over year**, while casual riders also took trips more than **three times longer** than members on average. Within Q1 2020, casual monthly usage increased sharply while member monthly usage declined.
+
+These findings suggest an opportunity to identify **high-frequency casual riders** and target them with membership campaigns focused on convenience, value and repeated usage.
+
+The project demonstrates an end-to-end analytics workflow from **data preparation and SQL analysis to Tableau visualization, business insight generation and portfolio presentation**.
