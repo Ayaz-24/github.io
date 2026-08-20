@@ -8,6 +8,9 @@ SUM ( Sales[Profit] )
 Profit Margin =
 DIVIDE ( [Total Profit], [Total Sales], 0 )
 
+Total Orders =
+DISTINCTCOUNT ( Sales[OrderID] )
+
 -- Supporting measures
 Transaction Count =
 COUNTROWS ( Sales )
