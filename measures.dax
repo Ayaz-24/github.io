@@ -1,0 +1,51 @@
+-- Core measures
+Total Sales =
+SUM ( Sales[Sales] )
+
+Total Profit =
+SUM ( Sales[Profit] )
+
+Profit Margin =
+DIVIDE ( [Total Profit], [Total Sales], 0 )
+
+Total Orders =
+DISTINCTCOUNT ( Sales[OrderID] )
+
+-- Supporting measures
+Transaction Count =
+COUNTROWS ( Sales )
+
+Average Sale =
+DIVIDE ( [Total Sales], [Transaction Count], 0 )
+
+Sales Previous Month =
+CALCULATE (
+    [Total Sales],
+    DATEADD ( 'Date'[Date], -1, MONTH )
+)
+
+Monthly Sales Change =
+[Total Sales] - [Sales Previous Month]
+
+Monthly Sales Change % =
+DIVIDE ( [Monthly Sales Change], [Sales Previous Month], 0 )
+
+Profit Previous Month =
+CALCULATE (
+    [Total Profit],
+    DATEADD ( 'Date'[Date], -1, MONTH )
+)
+
+Monthly Profit Change % =
+DIVIDE ( [Total Profit] - [Profit Previous Month], [Profit Previous Month], 0 )
+
+-- Date table (create as a new calculated table and mark it as the Date table)
+Date =
+ADDCOLUMNS (
+    CALENDAR ( MIN ( Sales[Date] ), MAX ( Sales[Date] ) ),
+    "Year", YEAR ( [Date] ),
+    "Month Number", MONTH ( [Date] ),
+    "Month", FORMAT ( [Date], "MMM" ),
+    "Year Month", FORMAT ( [Date], "YYYY-MM" ),
+    "Quarter", "Q" & FORMAT ( [Date], "Q" )
+)
