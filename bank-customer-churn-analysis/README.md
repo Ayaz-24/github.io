@@ -126,6 +126,8 @@ Churned customers were older on average and maintained higher balances, while te
 
 ## Power BI Dashboard
 
+![Bank Customer Churn Dashboard](dashboard/Dashboard.png)
+
 The dashboard includes:
 
 - Total Customers
@@ -139,7 +141,8 @@ The dashboard includes:
 - Churn Rate by Number of Products
 - Churn Rate by Gender
 - Geography, Gender, and Age Group slicers
-- Key Insights text box
+
+[Download the Power BI project](dashboard/Bank%20Customer%20Churn%20Analysis.pbix)
 
 ## Skills Demonstrated
 
@@ -156,8 +159,8 @@ bank-customer-churn-analysis/
 ├── README.md
 ├── bank_churn_analysis.sql
 ├── dashboard/
-│   ├── Bank-Customer-Churn-Analysis.pbix
-│   └── bank-churn-dashboard.png
+│   ├── Bank Customer Churn Analysis.pbix
+│   └── Dashboard.png
 └── data/
     └── README.md
 ```
