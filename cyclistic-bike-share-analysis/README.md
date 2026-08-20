@@ -42,9 +42,9 @@ See [data/README.md](data/README.md) for dataset and preparation information.
 
 ## Tools Used
 
-- **SQL / BigQuery** — data cleaning, validation, aggregation and rider analysis
+- **SQL / BigQuery** — data cleaning, validation, aggregation, and rider analysis
 - **Python (pandas)** — additional data preparation and validation
-- **Tableau** — KPI development, data visualization and dashboard storytelling
+- **Tableau** — KPI development, data visualization, and dashboard storytelling
 - **GitHub** — project documentation and portfolio presentation
 
 ---
@@ -126,7 +126,7 @@ This distinction is important: **member rides increased overall from Q1 2019 to 
 ## Business Recommendations
 
 1. **Target frequent casual riders for membership conversion**  
-   Focus marketing efforts on casual riders who demonstrate repeat usage rather than targeting all casual users.
+   Focus marketing efforts on casual riders who demonstrate repeat usage rather than targeting every casual user.
 
 2. **Position membership around convenience and value**  
    Show frequent casual riders how annual membership could provide better value and convenience compared with repeated individual ride purchases.
@@ -138,7 +138,7 @@ This distinction is important: **member rides increased overall from Q1 2019 to 
    Casual and member riders demonstrate different usage behaviours, so marketing communication should be tailored rather than using a single message for both groups.
 
 5. **Track conversion performance**  
-   Monitor KPIs such as campaign response rate, membership conversion rate, repeat usage and retention to determine whether conversion initiatives are successful.
+   Monitor KPIs such as campaign response rate, membership conversion rate, repeat usage, and retention to determine whether conversion initiatives are successful.
 
 ---
 
@@ -155,7 +155,7 @@ The redesigned Tableau dashboard provides an executive view of:
 
 ### Dashboard Preview
 
-![Cyclistic Bike-Share Analysis Dashboard](Cyclistic%20Bike-Share%20Analysis%20Dashboard.png)
+![Cyclistic Bike-Share Analysis Dashboard](Cyclistic%20Rider%20Behaviour%20Analysis%20Q1%202019%20vs%20Q1%202020.png)
 
 ### Interactive Dashboard
 
@@ -165,7 +165,7 @@ The redesigned Tableau dashboard provides an executive view of:
 
 ## Skills Demonstrated
 
-**SQL / BigQuery**
+### SQL / BigQuery
 - Data cleaning
 - Conditional aggregation
 - Date functions
@@ -174,7 +174,7 @@ The redesigned Tableau dashboard provides an executive view of:
 - Trend analysis
 - Data validation
 
-**Python**
+### Python
 - pandas
 - Schema standardization
 - Datetime handling
@@ -182,7 +182,7 @@ The redesigned Tableau dashboard provides an executive view of:
 - Feature engineering
 - Validation
 
-**Tableau**
+### Tableau
 - Calculated fields
 - KPI cards
 - Filters
@@ -191,7 +191,7 @@ The redesigned Tableau dashboard provides an executive view of:
 - Dashboard design
 - Executive storytelling
 
-**Business Analytics**
+### Business Analytics
 - KPI development
 - Behavioural segmentation
 - Trend interpretation
@@ -205,7 +205,7 @@ The redesigned Tableau dashboard provides an executive view of:
 ```text
 cyclistic-bike-share-analysis/
 ├── README.md
-├── Cyclistic Bike-Share Analysis Dashboard.png
+├── Cyclistic Rider Behaviour Analysis Q1 2019 vs Q1 2020.png
 ├── cyclistic_analysis.sql
 ├── cyclistic_data_cleaning.py
 └── data/
@@ -220,6 +220,6 @@ The analysis identified meaningful behavioural differences between Cyclistic's c
 
 Casual ridership grew **108.4% year over year**, while casual riders also took trips more than **three times longer** than members on average. Within Q1 2020, casual monthly usage increased sharply while member monthly usage declined.
 
-These findings suggest an opportunity to identify **high-frequency casual riders** and target them with membership campaigns focused on convenience, value and repeated usage.
+These findings suggest an opportunity to identify **high-frequency casual riders** and target them with membership campaigns focused on convenience, value, and repeated usage.
 
-The project demonstrates an end-to-end analytics workflow from **data preparation and SQL analysis to Tableau visualization, business insight generation and portfolio presentation**.
+The project demonstrates an end-to-end analytics workflow from **data preparation and SQL analysis to Tableau visualization, business insight generation, and portfolio presentation**.
